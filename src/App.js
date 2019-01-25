@@ -1,25 +1,40 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Game from './components/Game';
+import Landing from './components/Landing';
+import Modal from './components/Modal';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      show: false
+    };
+
+  }
+
+
+
+
+  showModal = () => {
+    this.setState({ show: true });
+  };
+
+  hideModal = () => {
+    this.setState({ show: false });
+  };
+
   render() {
+    let modal = (this.state.show)
+      ? <Modal hideModal={() => this.hideModal()} />
+      : '';
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        {modal}
+        <Landing showModal={() => this.showModal()} />
+
+        <Game />
       </div>
     );
   }
