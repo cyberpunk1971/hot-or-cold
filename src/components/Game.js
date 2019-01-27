@@ -8,7 +8,8 @@ export default class Game extends Component {
       prevGuesses: [],
       userGuess: "",
       answer: Math.floor(Math.random() * 100) + 1,
-      response: ""
+      response: "",
+      backgroundColor: "white"
     };
     console.log(this.state.answer);
   }
@@ -22,7 +23,8 @@ export default class Game extends Component {
       prevGuesses: [],
       userGuess: "",
       answer: Math.floor(Math.random() * 100) + 1,
-      response: ""
+      response: "",
+      backgroundColor: "white"
     })
   }
 
