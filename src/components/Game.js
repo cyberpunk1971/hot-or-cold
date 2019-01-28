@@ -8,8 +8,8 @@ export default class Game extends Component {
       prevGuesses: [],
       userGuess: "",
       answer: Math.floor(Math.random() * 100) + 1,
-      response: "",
-      backgroundColor: "white"
+      response: ""
+
     };
     console.log(this.state.answer);
   }
@@ -23,8 +23,7 @@ export default class Game extends Component {
       prevGuesses: [],
       userGuess: "",
       answer: Math.floor(Math.random() * 100) + 1,
-      response: "",
-      backgroundColor: "white"
+      response: ""
     })
   }
 
@@ -63,7 +62,9 @@ export default class Game extends Component {
         </div>
         <form onSubmit={this.onSubmit}>
           <input type="number" name="userGuess" value={this.state.userGuess} onChange={this.onChange}></input>
-          <button type="submit" onClick={(e) => this.saveGuess()}
+          <button
+            type="submit"
+            onClick={(e) => this.saveGuess()}
           >Submit</button>
         </form>
         <div>
